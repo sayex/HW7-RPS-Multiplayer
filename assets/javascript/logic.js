@@ -81,7 +81,7 @@ $(document).ready(function () {
 
     function RPSLogic() {
         if (player1Choice === "Rock" && player2Choice === "Paper") {
-            $("#textReults").text("Paper Covers Rock");
+            $("#textResults").text("Paper Covers Rock");
             $("#playerWins").text(player2Name + " Wins");
             player2Wins++
             player1Losses++
@@ -92,7 +92,7 @@ $(document).ready(function () {
         }
 
         if (player1Choice === "Paper" && player2Choice === "Scissors") {
-            $("#textReults").text("Scissors Cuts Paper");
+            $("#textResults").text("Scissors Cuts Paper");
             $("#playerWins").text(player2Name + " Wins");
             player2Wins++
             player1Losses++
@@ -103,7 +103,7 @@ $(document).ready(function () {
         }
 
         if (player1Choice === "Scissors" && player2Choice === "Rock") {
-            $("#textReults").text("Rock Smashes Scissors");
+            $("#textResults").text("Rock Smashes Scissors");
             $("#playerWins").text(player2Name + " Wins");
             player2Wins++
             player1Losses++
@@ -114,7 +114,7 @@ $(document).ready(function () {
 
         }
         if (player1Choice === "Rock" && player2Choice === "Scissors") {
-            $("#textReults").text("Rock Smashes Scissors");
+            $("#textResults").text("Rock Smashes Scissors");
             $("#playerWins").text(player1Name + " Wins");
             player1Wins++
             player2Losses++
@@ -125,7 +125,7 @@ $(document).ready(function () {
         }
 
         if (player1Choice === "Paper" && player2Choice === "Rock") {
-            $("#textReults").text("Paper Covers Rock");
+            $("#textResults").text("Paper Covers Rock");
             $("#playerWins").text(player1Name + " Wins");
             player1Wins++
             player2Losses++
@@ -136,7 +136,7 @@ $(document).ready(function () {
         }
 
         if (player1Choice === "Scissors" && player2Choice === "Paper") {
-            $("#textReults").text("Scissors Cuts Paper");
+            $("#textResults").text("Scissors Cuts Paper");
             $("#playerWins").text(player1Name + " Wins");
             player1Wins++
             player2Losses++
@@ -148,7 +148,7 @@ $(document).ready(function () {
         }
 
         if (player1Choice === "Rock" && player2Choice === "Rock") {
-            $("#textReults").text("Tie");
+            $("#textResults").text("Tie");
             $("#playerWins").text("");
             ties++
             scoreUpdate()
@@ -159,7 +159,7 @@ $(document).ready(function () {
         }
 
         if (player1Choice === "Paper" && player2Choice === "Paper") {
-            $("#textReults").text("Tie");
+            $("#textResults").text("Tie");
             $("#playerWins").text("");
             ties++
             scoreUpdate()
@@ -169,7 +169,7 @@ $(document).ready(function () {
         }
 
         if (player1Choice === "Scissors" && player2Choice === "Scissors") {
-            $("#textReults").text("Tie");
+            $("#textResults").text("Tie");
             $("#playerWins").text("");
             ties++
             scoreUpdate()

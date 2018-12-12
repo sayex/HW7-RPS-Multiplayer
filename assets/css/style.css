@@ -3,6 +3,6 @@ body {
 }
 
 .jumbotronImg {
-    background-image: url("/assets/images/backgroundRPS.gif");
+    background-image: url("../images/backgroundRPS.gif");
     /* background-size: cover; */
 }

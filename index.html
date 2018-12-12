@@ -16,6 +16,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/sticky-footer.css">
 
     <title>Document</title>
 </head>
@@ -47,44 +48,50 @@
         <hr>
         <div class="row">
             <div class="col-md">
-                <div class="card" style="width: 17rem;">
+                <div class="card" style="width: 100%">
                     <div class="card-body">
                         <h5 class="card-title">Player 1: <span id="player1Name">Sayex</span></h5>
                         <p class="card-text"><button type="button" class="btn btn-info">Paper</button> <button type="button"
-                                class="btn btn-dark">Rock</button> <button type="button" class="btn btn-danger">Scicors</button></p>
+                                class="btn btn-dark">Rock</button> <button type="button" class="btn btn-danger">Scissors</button></p>
                     </div>
-                    <div class="card-footer">
+                    <div class="card-footer text-center">
                         <small class="text-muted"> Wins: <span id="wins1">0</span> Losses:<span id="loss1"> 0</span>
                             Ties: <span id="ties">0</span></small>
                     </div>
                 </div>
             </div>
             <div class="col-md">
-                <div class="card" style="width: 31rem;">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">
-                            <p class="float-left">Player 1 chose: <span class="text-danger" id="player1Chose">Rock</span></p>
-                            <p class="float-right">Player
+                <div class="card-group">
+                    <div class="card" style="width: 100%">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Player 1 chose: <span class="text-danger" id="player1Chose">Rock</span>
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 100%">
+                        <div class="card-body">
+                            <h5 class="card-title text-center float-right">Player
                                 2 chose: <span class="text-danger" id="player2Chose">Paper</span></p>
-                            </p>
-                        </h5>
+
+                            </h5>
+                        </div>
                     </div>
                 </div>
-                <div class="card" style="width: 31rem;">
+                <div class="card" style="width: 100%">
                     <div class="card-body">
                         <h5 class="card-title text-center">Paper Covers Rock</h5>
-                        <h5 class="card-title text-center">Player <span id="playerWins">1: Sayex</span> Wins</h5>
+                        <h5 class="card-title text-center"><span id="playerWins">Sayex</span> Wins</h5>
                     </div>
                 </div>
             </div>
             <div class="col-md">
-                <div class="card" style="width: 17rem;">
+                <div class="card" style="width: 100%">
                     <div class="card-body">
                         <h5 class="card-title">Player 2: <span id="player2Name">Leo</span></h5>
                         <p class="card-text"><button type="button" class="btn btn-info">Paper</button> <button type="button"
-                                class="btn btn-dark">Rock</button> <button type="button" class="btn btn-danger">Scicors</button></p>
+                                class="btn btn-dark">Rock</button> <button type="button" class="btn btn-danger">Scissors</button></p>
                     </div>
-                    <div class="card-footer">
+                    <div class="card-footer text-center">
                         <small class="text-muted"> Wins: <span id="wins2">0</span> Losses:<span id="loss2"> 0</span>
                             Ties: <span id="ties">0</span></small>
                     </div>
@@ -95,6 +102,12 @@
     </div>
 
     </div>
+
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">Footers are nice when they stick</span>
+        </div>
+    </footer>
 </body>
 
 </html>

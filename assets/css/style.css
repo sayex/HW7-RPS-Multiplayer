@@ -1,0 +1,8 @@
+body {
+    background: rgb(145, 194, 240)
+}
+
+.jumbotronImg {
+    background-image: url("/assets/images/backgroundRPS.gif");
+    /* background-size: cover; */
+}

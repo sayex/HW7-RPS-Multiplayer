@@ -193,10 +193,9 @@ $(document).ready(function () {
 
     function gameReset() {
         $("#player1Chose").text("");
-        $("#player2Chose").attr("data-choice", "");
         $(".player1").show();
         $("#player2Chose").text("");
-        $("#player2Chose").attr("data-choice", "");
+
         $(".player2").show();
         $("#testReults").text("");
         $("#playerWins").text("");

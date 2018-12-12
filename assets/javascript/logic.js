@@ -9,9 +9,28 @@ $(document).ready(function () {
         messagingSenderId: "109051506827"
     };
     firebase.initializeApp(config);
+    var database = firebase.database();
 
 
     //create varables
+
+    var player1 = {
+        playerWins: 0,
+        playerLosses: 0,
+        PlayerName: "",
+        playerChoice: "",
+        playerChoiceSet: false,
+        playerSet: false
+    }
+
+    var player2 = {
+        playerWins: 0,
+        playerLosses: 0,
+        PlayerName: "",
+        playerChoice: "",
+        playerChoiceSet: false,
+        playerSet: false
+    }
 
     var player1Wins = 0;
     var player2Wins = 0;
@@ -28,7 +47,6 @@ $(document).ready(function () {
     var player2ChoiceSet = false;
 
 
-
     //function go grab user name input
     function playerSetup() {
         $(".player1").hide();
@@ -42,11 +60,17 @@ $(document).ready(function () {
                 player1Name = inputName
                 $("#player1Name").text(player1Name);
                 $(".player1").show();
+                database.ref("Player").child("1").update({
+                    name: player1Name
+                })
             } else if (player1Set && !player2Set) {
                 player2Set = true
                 player2Name = inputName
                 $("#player2Name").text(player2Name);
                 $(".player2").show();
+                database.ref("Player").child("2").update({
+                    name: player2Name
+                })
             }
         })
     }
@@ -76,6 +100,30 @@ $(document).ready(function () {
 
         }
     })
+
+    //function to update screen with winner and update user wins losses and ties
+
+    function scoreUpdate() {
+        $("#wins1").text(player1Wins);
+        $("#loss1").text(player1Losses);
+        $("#wins2").text(player2Wins);
+        $("#loss2").text(player2Losses);
+        $("#ties1").text(ties)
+        $("#ties2").text(ties)
+    }
+    // game reset upon both players makeing a choice
+    function gameReset() {
+        $("#player1Choice").text("");
+        $(".player1").show();
+        $("#player2Choice").text("");
+
+        $(".player2").show();
+        $("#textResults").text("");
+        $("#playerWins").text("");
+        player1ChoiceSet = false
+        player2ChoiceSet = false
+
+    }
 
     //Rock Paper Scissors logic
 
@@ -180,29 +228,7 @@ $(document).ready(function () {
         }
     }
 
-    //function to update screen with winner and update user wins losses and ties
 
-    function scoreUpdate() {
-        $("#wins1").text(player1Wins);
-        $("#loss1").text(player1Losses);
-        $("#wins2").text(player2Wins);
-        $("#loss2").text(player2Losses);
-        $("#ties1").text(ties)
-        $("#ties2").text(ties)
-    }
-    // game reset upon both players makeing a choice
-    function gameReset() {
-        $("#player1Choice").text("");
-        $(".player1").show();
-        $("#player2Choice").text("");
-
-        $(".player2").show();
-        $("#textResults").text("");
-        $("#playerWins").text("");
-        player1ChoiceSet = false
-        player2ChoiceSet = false
-
-    }
 
     playerSetup()
     scoreUpdate()

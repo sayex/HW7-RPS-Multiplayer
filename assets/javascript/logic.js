@@ -19,8 +19,8 @@ $(document).ready(function () {
     var player2Losses = 0;
     var ties = 0;
     var player1Set = false;
-    var player1Name = ""
     var player2Set = false;
+    var player1Name = ""
     var player2Name = "";
     var player1Choice = "";
     var player2Choice = "";
@@ -77,7 +77,7 @@ $(document).ready(function () {
         }
     })
 
-    //function to update screen with user clicks
+    //Rock Paper Scissors logic
 
     function RPSLogic() {
         if (player1Choice === "Rock" && player2Choice === "Paper") {
@@ -190,11 +190,11 @@ $(document).ready(function () {
         $("#ties1").text(ties)
         $("#ties2").text(ties)
     }
-
+    // game reset upon both players makeing a choice
     function gameReset() {
-        $("#player1Chose").text("");
+        $("#player1Choice").text("");
         $(".player1").show();
-        $("#player2Chose").text("");
+        $("#player2Choice").text("");
 
         $(".player2").show();
         $("#testReults").text("");

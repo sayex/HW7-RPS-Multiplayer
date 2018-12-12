@@ -197,7 +197,7 @@ $(document).ready(function () {
         $("#player2Choice").text("");
 
         $(".player2").show();
-        $("#testReults").text("");
+        $("#textResults").text("");
         $("#playerWins").text("");
         player1ChoiceSet = false
         player2ChoiceSet = false

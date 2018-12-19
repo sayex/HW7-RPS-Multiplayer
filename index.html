@@ -24,7 +24,7 @@
 
     <link rel="stylesheet" href="assets/css/sticky-footer.css">
 
-    <script src="assets/javascript/logic.js"></script>
+    <script src="assets/javascript/app.js"></script>
 
 
     <title>Rock Paper Scissors</title>
@@ -60,12 +60,12 @@
             <div class="col-md-3">
                 <div class="card" style="width: 100%">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Player 1: <span id="player1Name"></span>
+                        <h5 class="card-title"><span id="player1Name">Waiting</span>
                         </h5>
                         <p class="card-text player1">
-                            <button type="button" class="btn btn-info p-1" data-player=player1 id="player1Paper">Paper</button>
-                            <button type="button" class="btn btn-dark p-1" data-player=player1 id="player1Rock">Rock</button>
-                            <button type="button" class="btn btn-danger p-1" data-player=player1 id="player1Scissors">Scissors</button>
+                            <button type="button" class="btn btn-info p-1 choice" data-player=1 id="player1Paper">Paper</button>
+                            <button type="button" class="btn btn-dark p-1 choice" data-player=1 id="player1Rock">Rock</button>
+                            <button type="button" class="btn btn-danger p-1 choice" data-player=1 id="player1Scissors">Scissors</button>
                         </p>
                     </div>
                     <div class="card-footer text-center">
@@ -79,14 +79,13 @@
                 <div class="card-group">
                     <div class="card" style="width: 100%">
                         <div class="card-body">
-                            <h5 class="card-title text-center">Player 1 choice: <span class="text-danger" id="player1Choice"></span>
+                            <h5 class="card-title text-center"><span class="text-danger" id="player1Choice"></span>
                             </h5>
                         </div>
                     </div>
                     <div class="card" style="width: 100%">
                         <div class="card-body">
-                            <h5 class="card-title text-center">Player
-                                2 choice: <span class="text-danger" id="player2Choice"></span>
+                            <h5 class="card-title text-center"><span class="text-danger" id="player2Choice"></span>
                                 </p>
                             </h5>
                         </div>
@@ -103,17 +102,17 @@
             <div class="col-md-3">
                 <div class="card" style="width: 100%">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Player 2: <span id="player2Name"></span>
+                        <h5 class="card-title"><span id="player2Name">Waiting</span>
                         </h5>
                         <p class="card-text player2" data-player=player2>
-                            <button type="button" class="btn btn-info p-1" data-player=player2>Paper</button>
-                            <button type="button" class="btn btn-dark p-1" data-player=player2>Rock</button>
-                            <button type="button" class="btn btn-danger p-1" data-player=player2>Scissors</button>
+                            <button type="button" class="btn btn-info p-1 choice" data-player=2>Paper</button>
+                            <button type="button" class="btn btn-dark p-1 choice" data-player=2>Rock</button>
+                            <button type="button" class="btn btn-danger p-1 choice" data-player=2>Scissors</button>
                         </p>
                     </div>
                     <div class="card-footer text-center">
-                        <small class="text-muted"> Wins: <span id="wins2">0</span> Losses:<span id="loss2"> 0</span>
-                            Ties: <span id="ties2">0</span>
+                        <small class="text-muted"> Wins: <span id="wins2"></span> Losses:<span id="loss2"></span>
+                            Ties: <span id="ties2"></span>
                         </small>
                     </div>
                 </div>

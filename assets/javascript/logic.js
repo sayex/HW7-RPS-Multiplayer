@@ -149,19 +149,6 @@ $(document).ready(function () {
         $("#player1Choice").text("");
         $(".player1").show();
         $("#player2Choice").text("");
-
-        $(".player2").show();
-        $("#textResults").text("");
-        $("#playerWins").text("");
-        player1ChoiceSet = false
-        player2ChoiceSet = false
-        // database.ref("Player").child("1").update({
-        //     choice: null
-        // })
-        // database.ref("Player").child("2").update({
-        //     choice: null
-        // })
-
     }
 
     //Rock Paper Scissors logic

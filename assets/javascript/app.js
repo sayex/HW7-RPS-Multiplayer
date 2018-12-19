@@ -129,8 +129,7 @@ $(document).ready(function () {
         }
 
         if (player.choice === "Paper" && opponent.choice === "Paper") {
-            $("#textResults").text("Paper Covers Rock");
-            $("#playerWins").text(player.name + " Wins");
+            $("#textResults").text("Tie");
             ties++
             scoreUpdate()
             setTimeout(function () {
@@ -138,8 +137,7 @@ $(document).ready(function () {
             }, 3000)
         }
         if (player.choice === "Rock" && opponent.choice === "Rock") {
-            $("#textResults").text("Paper Covers Rock");
-            $("#playerWins").text(player.name + " Wins");
+            $("#textResults").text("Tie");
             ties++
             scoreUpdate()
             setTimeout(function () {
@@ -147,8 +145,7 @@ $(document).ready(function () {
             }, 3000)
         }
         if (player.choice === "Scissors" && opponent.choice === "Scissors") {
-            $("#textResults").text("Paper Covers Rock");
-            $("#playerWins").text(player.name + " Wins");
+            $("#textResults").text("Tie");
             ties++
             scoreUpdate()
             setTimeout(function () {

@@ -56,8 +56,7 @@ $(document).ready(function () {
 
 
     connections.on('value', function (snapshot) {
-        console.log(snapshot.val())
-        console.log("oppenont" + opponent.choice)
+
 
         if (con) {
 

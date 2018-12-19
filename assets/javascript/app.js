@@ -160,7 +160,7 @@ $(document).ready(function () {
             $("#textResults").text("Paper Covers Rock");
             $("#playerWins").text(player.name + " Wins");
             con.update({
-                losses: +1
+                wins: +1
             })
             scoreUpdate()
             setTimeout(function () {
@@ -171,7 +171,7 @@ $(document).ready(function () {
             $("#textResults").text("Paper Covers Rock");
             $("#playerWins").text(opponent.name + " Wins");
             con.update({
-                wins: +1
+                losses: +1
             })
             scoreUpdate()
             setTimeout(function () {

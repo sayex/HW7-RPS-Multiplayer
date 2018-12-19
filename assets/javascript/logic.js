@@ -12,25 +12,32 @@ $(document).ready(function () {
     var database = firebase.database();
 
 
+
+    // database to build funtions
+    //a way to assign player 1 or player 2
+    //listen for player 1 selection and update player 1 screen
+    //llsten for player 2 selection and update player 2 screen
+    //after both players make a selection show there selection, update win/loss/tie and reset game for another round.
+
     //create varables
 
-    var player1 = {
-        playerWins: 0,
-        playerLosses: 0,
-        PlayerName: "",
-        playerChoice: "",
-        playerChoiceSet: false,
-        playerSet: false
-    }
+    // var player1 = {
+    //     playerWins: 0,
+    //     playerLosses: 0,
+    //     PlayerName: "",
+    //     playerChoice: "",
+    //     playerChoiceSet: false,
+    //     playerSet: false
+    // }
 
-    var player2 = {
-        playerWins: 0,
-        playerLosses: 0,
-        PlayerName: "",
-        playerChoice: "",
-        playerChoiceSet: false,
-        playerSet: false
-    }
+    // var player2 = {
+    //     playerWins: 0,
+    //     playerLosses: 0,
+    //     PlayerName: "",
+    //     playerChoice: "",
+    //     playerChoiceSet: false,
+    //     playerSet: false
+    // }
 
     var player1Wins = 0;
     var player2Wins = 0;
@@ -46,6 +53,26 @@ $(document).ready(function () {
     var player1ChoiceSet = false;
     var player2ChoiceSet = false;
 
+    database.ref().on("value", function (snapshot) {
+        var sv = snapshot.val();
+        if (sv == null) {
+
+        } else if (sv.players.player1 !== null && sv.players.player2 == null) {
+            player1Set = true
+            player1Name = sv.players.player1.name
+
+            $("#player1Name").text(player1Name);
+            $(".player1").show();
+            console.log("Player 1 " + sv.players.player1.name)
+
+        } else if (sv.players.player1 !== null && sv.players.player2 !== null) {
+            player2Set = true
+            player2Name = sv.players.player2.name
+            $("#player2Name").text(player2Name);
+            $(".player2").show();
+            console.log("Player 2 " + sv.players.player2.name)
+        }
+    })
 
     //function go grab user name input
     function playerSetup() {
@@ -56,19 +83,19 @@ $(document).ready(function () {
             var inputName = $("#inputName").val();
             $("#inputName").val("")
             if (!player1Set) {
-                player1Set = true
+                // player1Set = true
                 player1Name = inputName
-                $("#player1Name").text(player1Name);
-                $(".player1").show();
-                database.ref("Player").child("1").update({
+                // $("#player1Name").text(player1Name);
+                // $(".player1").show();
+                database.ref("players/player1").update({
                     name: player1Name
                 })
             } else if (player1Set && !player2Set) {
-                player2Set = true
+                // player2Set = true
                 player2Name = inputName
-                $("#player2Name").text(player2Name);
-                $(".player2").show();
-                database.ref("Player").child("2").update({
+                // $("#player2Name").text(player2Name);
+                // $(".player2").show();
+                database.ref("players/player2").update({
                     name: player2Name
                 })
             }
@@ -83,11 +110,17 @@ $(document).ready(function () {
         var selectedButton = $(this).text()
         if (player === "player1") {
             player1Choice = selectedButton
+            database.ref("players/player1").update({
+                choice: player1Choice
+            })
 
             $(".player1").hide();
             player1ChoiceSet = true
         } else if (player === "player2") {
             player2Choice = selectedButton
+            database.ref("players/player2").update({
+                choice: player2Choice
+            })
 
             $(".player2").hide();
             player2ChoiceSet = true
@@ -116,13 +149,6 @@ $(document).ready(function () {
         $("#player1Choice").text("");
         $(".player1").show();
         $("#player2Choice").text("");
-
-        $(".player2").show();
-        $("#textResults").text("");
-        $("#playerWins").text("");
-        player1ChoiceSet = false
-        player2ChoiceSet = false
-
     }
 
     //Rock Paper Scissors logic
